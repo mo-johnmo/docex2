@@ -3,8 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Example's documentation!
-===================================
+John's simple Sphinx to GitHub Pages example
+============================================
+This sentence may serve as an introduction.
 
 .. toctree::
    :maxdepth: 2
