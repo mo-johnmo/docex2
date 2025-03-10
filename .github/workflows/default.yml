@@ -1,0 +1,36 @@
+# insert copyright & licence info
+name: default
+
+# Controls when the action will run
+on:
+  # Triggers the workflow on push or pull request events
+  push:
+  pull_request:
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run
+# sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part
+    # of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job
+      # can access it
+      - uses: actions/checkout@v4
+
+      # find all shell scripts:  either *.sh or with no extension.
+      # Exclude .git and cache directories and README and Makefile file names
+      # from results. (Makefile is a make and not a bash, script.)
+      - name: Run ShellCheck
+        run: |
+          find . -type f \( -name '*.sh' -or ! -name '*.*' \) ! \
+          -name "Makefile" ! -name "README" ! -path "*.git*" ! \
+          -path "*cache*" -exec shellcheck {} +
+      # end
