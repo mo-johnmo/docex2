@@ -13,6 +13,7 @@ fi
 
 ROOT_SOFTWARE_DIR="/home/GGfx/software"
 GGfx_COMMAND="/../bin/setup_env_for_GGfx"
+# shellcheck source="/home/GGfx/software/../bin/setup_env_for_GGfx"
 source "${ROOT_SOFTWARE_DIR}${GGfx_COMMAND}" "${GGfx_VERSION}"
 
 if [[ -z ${QUIET_MODE:-} ]]; then
