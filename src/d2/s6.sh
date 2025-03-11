@@ -31,7 +31,7 @@ safe_load "${GGH2TOOL_MODULE_NAME}"
 
 # If PYTHONPATH_PREPEND has been set, prepend it to PYTHONPATH to extend the
 # Python environment.
-if [[ ! -z ${PYTHONPATH_PREPEND:-} ]]; then
+if [[ -n ${PYTHONPATH_PREPEND:-} ]]; then
     echo "[INFO] Prepending the following to PYTHONPATH: ${PYTHONPATH_PREPEND}"
     export PYTHONPATH=${PYTHONPATH_PREPEND}:${PYTHONPATH:-}
 fi
@@ -40,5 +40,5 @@ if [[ -z ${QUIET_MODE:-} ]]; then
     echo "[OK] Modules loaded."
 fi
 
-command="/usr/bin/time -v -o ${CFCAL_TASK_LOG_ROOT}.time $@"
+command="/usr/bin/time -v -o ${CFCAL_TASK_LOG_ROOT}.time $*"
 exec ${command}
