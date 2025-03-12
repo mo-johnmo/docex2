@@ -11,9 +11,10 @@ if [[ -n ${PYTHONPATH_PREPEND:-} ]]; then
     export PYTHONPATH=${PYTHONPATH_PREPEND}:${PYTHONPATH:-}
 fi
 
-ROOT_SOFTWARE_DIR="/home/GGfx/software"
-GGfx_COMMAND="/../bin/setup_env_for_GGfx"
-# shellcheck source=/home/GGfx/software/../bin/setup_env_for_GGfx
+ROOT_SOFTWARE_DIR="src/d1"
+GGfx_COMMAND="/../d2/s7.sh"
+GGfx_VERSION="666.1.0"
+# shellcheck source=src/d1/../d2/s7.sh
 source "${ROOT_SOFTWARE_DIR}${GGfx_COMMAND}" "${GGfx_VERSION}"
 
 if [[ -z ${QUIET_MODE:-} ]]; then

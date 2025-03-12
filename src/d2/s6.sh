@@ -41,4 +41,4 @@ if [[ -z ${QUIET_MODE:-} ]]; then
 fi
 
 command="/usr/bin/time -v -o ${CFCAL_TASK_LOG_ROOT}.time $*"
-exec ${command}
+exec "${command}"
